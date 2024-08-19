@@ -105,7 +105,8 @@ function FormSubmission() {
       try {
         if (editIndex != null) {
           const response = await axios.put(
-            `http://localhost:5000/submissions/${submissions[editIndex]._id}`,
+            //`http://localhost:5000/submissions/${submissions[editIndex]._id}`,
+            `insurance-six-zeta.vercel.app/${submissions[editIndex]._id}`
             newSubmission
           );
           const updatedSubmissions = [...submissions];
@@ -162,7 +163,9 @@ function FormSubmission() {
   async function handleDelete(index) {
     try {
       await axios.delete(
-        `http://localhost:5000/submissions/${submissions[index]._id}`
+        //`http://localhost:5000/submissions/${submissions[index]._id}`
+        `insurance-six-zeta.vercel.app/${submissions[index]._id}`
+        
       );
       const updatedSubmissions = submissions.filter((_, i) => i !== index);
       setSubmissions(updatedSubmissions);
@@ -189,7 +192,8 @@ function FormSubmission() {
   useEffect(() => {
     const fetchSubmissions = async () => {
       try {
-        const response = await axios.get("http://localhost:5000/submissions");
+       // http://localhost:5000/submissions
+        const response = await axios.get("insurance-six-zeta.vercel.app");
         setSubmissions(response.data);
         setFilteredSubmissions(response.data);
       } catch (error) {
