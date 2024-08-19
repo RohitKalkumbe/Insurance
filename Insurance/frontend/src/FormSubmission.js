@@ -106,7 +106,7 @@ function FormSubmission() {
         if (editIndex != null) {
           const response = await axios.put(
             //`http://localhost:5000/submissions/${submissions[editIndex]._id}`,
-            `insurance-six-zeta.vercel.app/${submissions[editIndex]._id}`
+            `insurance-six-zeta.vercel.app/${submissions[editIndex]._id}`,
             newSubmission
           );
           const updatedSubmissions = [...submissions];
